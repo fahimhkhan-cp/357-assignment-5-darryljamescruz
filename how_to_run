@@ -1,0 +1,7 @@
+for grader:
+
+httpd should exist already.
+
+run ./httpd 8080
+in a browser, now enter: http://localhost:8080/static/index.html
+
