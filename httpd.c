@@ -20,7 +20,6 @@ void reap_child(int signo){
 }
 
 int main(int argc, char *argv[]) {
-    printf("Please ")
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <port>\n", argv[0]);
         exit(EXIT_FAILURE);
