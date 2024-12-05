@@ -1,0 +1,142 @@
+curl -v http://localhost:8080/index     
+* Host localhost:8080 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:8080...
+* connect to ::1 port 8080 from ::1 port 60843 failed: Connection refused
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /index HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+* HTTP 1.0, assume close after body
+< HTTP/1.0 404 Not Found
+< Content-Type: text/html
+< Content-Length: 13
+< 
+* Closing connection
+404 Not Found%                                                      
+                                                                                                                                      
+darryljamescruz@Darryls-MacBook-Pro 357-assignment-5-darryljamescruz % curl -v http://localhost:8080/index.html 
+* Host localhost:8080 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:8080...
+* connect to ::1 port 8080 from ::1 port 60845 failed: Connection refused
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /index.html HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+* HTTP 1.0, assume close after body
+< HTTP/1.0 200 OK
+< Content-Type: text/html
+< Content-Length: 393
+< 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSC 357</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Darryl James Cruz</h1>
+  <p>This is for Assignment 5.</p>
+</div>
+
+<div class="navbar">
+  <a href="about.html">About</a>
+</div>
+
+
+</body>
+* Closing connection
+</html>%                                                                                                                                                                                                  
+darryljamescruz@Darryls-MacBook-Pro 357-assignment-5-darryljamescruz % curl -v http://localhost:8080/about.html
+* Host localhost:8080 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:8080...
+* connect to ::1 port 8080 from ::1 port 60847 failed: Connection refused
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /about.html HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+* HTTP 1.0, assume close after body
+< HTTP/1.0 200 OK
+< Content-Type: text/html
+< Content-Length: 565
+< 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>About This Server</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <p>This HTTP server was created for Assignment 5 for Fahim Khan's CSC 357 System's Programming Class.</p>
+    </main>
+</body>
+* Closing connection
+</html>%                                                                                                                                                                                                  
+darryljamescruz@Darryls-MacBook-Pro 357-assignment-5-darryljamescruz % curl -v http://localhost:8080/DNE.html    
+* Host localhost:8080 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:8080...
+* connect to ::1 port 8080 from ::1 port 60850 failed: Connection refused
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /DNE.html HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+* HTTP 1.0, assume close after body
+< HTTP/1.0 404 Not Found
+< Content-Type: text/html
+< Content-Length: 13
+< 
+* Closing connection
+404 Not Found%                                                                                                                                                                                            
+darryljamescruz@Darryls-MacBook-Pro 357-assignment-5-darryljamescruz % curl -I http://localhost:8080/DNE.html
+HTTP/1.0 404 Not Found
+Content-Type: text/html
+Content-Length: 13
+
+darryljamescruz@Darryls-MacBook-Pro 357-assignment-5-darryljamescruz % curl -I http://localhost:8080/index.html
+HTTP/1.0 200 OK
+Content-Type: text/html
+Content-Length: 393
+
+darryljamescruz@Darryls-MacBook-Pro 357-assignment-5-darryljamescruz % curl -I http://localhost:8080/about.html 
+HTTP/1.0 200 OK
+Content-Type: text/html
+Content-Length: 565
